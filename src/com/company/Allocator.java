@@ -146,30 +146,7 @@ public class Allocator {
 
         return Utils.byteArrToInt(Arrays.copyOfRange(header, 5, 9));
     }
-
-
-    private boolean isBlockOccupied(byte[] header) {
-        return Utils.byteToBool(header[0]);
-    }
-
-    private void changeHeaderOccupiedToOpposite(int indexOfByte) {
-        if (mem[indexOfByte] == Utils.boolToByte(false)) {
-            mem[indexOfByte] = Utils.boolToByte(true);
-        } else mem[indexOfByte] = Utils.boolToByte(false);
-    }
-/*
-    private void changeNextBlockSizeHeader(int indexOfStartHeader , int size){
-        byte [] newSize = Utils.exchangeIntToByteArray(size);
-        System.arraycopy(newSize,0,mem,indexOfStartHeader+5,newSize.length);
-    }
-
-    private void changePrevBlockSizeHeader(int indexOfStartHeader , int size , byte [] arr){
-        byte [] newSize = Utils.exchangeIntToByteArray(size);
-        System.arraycopy(newSize,0,mem,indexOfStartHeader+1,newSize.length);
-    }
-    */
-
-
+    
     public static int offsetSize(int size) {
         if (size % 4 == 0) {
             return size;

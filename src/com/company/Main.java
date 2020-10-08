@@ -30,7 +30,7 @@ public class Main {
         allocator.memFree(115);
         allocator.memFree(136);
         MemoryPrinter.printMemory(allocator);
-        
+
 
 /*
         allocator.memAlloc(23);
