@@ -2,14 +2,14 @@
 This is a Java implementation of **General-purpose allocator** . 
 The main idea of allocator is to correctly allocate and free memory .Our memory divides into blocks with headers.Every block has a header with information about this block.Now i will describe the structure of **Header**    
        
-##Header Structure
+## Header Structure
 
 Size of Header - 9 byte
 - isOccupiedBlock(1 byte) - shows if this block is free for work.
 - prevBlockSize(4 bytes) - shows previous block size
 - currentBlockSize(4 bytes) - shows current  size of  block.   
     
-##Methods descriptions       
+## Methods descriptions       
 
 `void* mem_alloc(size_t size)`   
 This function looks for a suitable block to
@@ -31,9 +31,9 @@ then using the `mem_alloc` function we are looking for a
  suitable memory location to allocate the necessary block.
   After that, the function is called to free the memory of the old block.
     
- #Usage   
+ # Usage   
  
- ##Alloc .    
+ ### Alloc .    
  ```  
  Allocator allocator = new Allocator(256);
 allocator.memAlloc(20);
@@ -44,7 +44,7 @@ allocator.memAlloc(50);
 ```
 Result : ![alt text](src/images/res1.jpg)   
 
-##Free memory
+### Free memory
 
 ```
 Allocator allocator = new Allocator(2048);
@@ -69,7 +69,7 @@ Allocation :  ![alt text](src/images/alloc1.jpg)
 
 Result :  ![alt text](src/images/free.jpg)   
 
-##Realloc
+### Realloc
 
 ```
 Allocator allocator = new Allocator(2048);
