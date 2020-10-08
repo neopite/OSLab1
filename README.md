@@ -1,6 +1,6 @@
 # Allocator
 This is a Java implementation of **General-purpose allocator** . 
-The main idea of allocator is to correctly allocate and free memory .Our memory divides into blocks with headers.Every block has a header with information about this block.Now i will describe the structure of **Header**
+The main idea of allocator is to correctly allocate and free memory .Our memory divides into blocks with headers.Every block has a header with information about this block.Now i will describe the structure of **Header**   
 ##Header Structure
 
 Size of Header - 9 byte
@@ -8,7 +8,8 @@ Size of Header - 9 byte
 - prevBlockSize(4 bytes) - shows previous block size
 - currentBlockSize(4 bytes) - shows current  size of  block.
 
-##Methods descriptions   
+##Methods descriptions       
+
 `void* mem_alloc(size_t size)` 
 This function looks for a suitable block to
  place a new memory location in it. 
@@ -29,7 +30,8 @@ then using the `mem_alloc` function we are looking for a
  suitable memory location to allocate the necessary block.
   After that, the function is called to free the memory of the old block.
   
- #Usage
+ #Usage   
+ 
  ###Create allocator with 256 bytes memory and fill .    
  ```  
  Allocator allocator = new Allocator(256);
