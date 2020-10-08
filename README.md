@@ -8,7 +8,7 @@ Size of Header - 9 byte
 - prevBlockSize(4 bytes) - shows previous block size
 - currentBlockSize(4 bytes) - shows current  size of  block.
 
-##Methods descriptions
+##Methods descriptions   
 `void* mem_alloc(size_t size)` 
 This function looks for a suitable block to
  place a new memory location in it. 
@@ -30,7 +30,7 @@ then using the `mem_alloc` function we are looking for a
   After that, the function is called to free the memory of the old block.
   
  #Usage
- ######Create allocator with 256 bytes memory and fill .    
+ ###Create allocator with 256 bytes memory and fill .    
  ```  
  Allocator allocator = new Allocator(256);
 allocator.memAlloc(20);
@@ -41,7 +41,7 @@ allocator.memAlloc(50);
 ```
 Result : ![alt text](src/images/res1.jpg)   
 
-######Free memory
+###Free memory
 
 ```
 Allocator allocator = new Allocator(2048);
@@ -66,7 +66,7 @@ Allocation :  ![alt text](src/images/alloc1.jpg)
 
 Result :  ![alt text](src/images/free.jpg)   
 
-######Realloc
+###Realloc
 
 ```
 Allocator allocator = new Allocator(2048);
