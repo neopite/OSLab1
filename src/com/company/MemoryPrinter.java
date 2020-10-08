@@ -6,7 +6,7 @@ public class MemoryPrinter {
     public static void printMemory(Allocator allocator){
         byte [] arr = allocator.getMem();
         int begin = 0 ;
-        int counter = 0 ;
+        System.out.println("HEADER SIZE : 9 bytes");
         while(true){
             byte [] header = Arrays.copyOfRange(arr,begin,begin+Allocator.getHeader());
             System.out.println("  Header Ind : " + begin+   "  Free : " + !Utils.byteToBool(arr[begin]) +

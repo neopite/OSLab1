@@ -42,7 +42,7 @@ public class Allocator {
             byte[] prevValForRightNeighb = Utils.intToByteArray(sizeOfFoundedBlock - size);
             System.arraycopy(prevValForRightNeighb, 0, mem, startOfFreeBlock + getCurrBlockSize(currentHeader) + 1, 4);
         }
-        return startOfFreeBlock - HEADER;        // return start index of block
+        return startOfFreeBlock - HEADER;
     }
 
     public int memRealloc(int index, int size) {
@@ -53,8 +53,8 @@ public class Allocator {
             return memAlloc(size);
         } else if (size + HEADER < sizeCurrentHeader) {
             byte[] firstHeader = createHeader(sizeCurrentHeader - size - HEADER, getPrevBlockSize(currentHeader));
-            firstHeader[0] = 1;
             byte[] secondHeader = createHeader(size, getCurrBlockSize(firstHeader));
+            secondHeader[0] = 1;
             System.arraycopy(firstHeader, 0, mem, index, firstHeader.length);
             System.arraycopy(secondHeader, 0, mem, index + HEADER + getCurrBlockSize(firstHeader), secondHeader.length);
             System.arraycopy(Arrays.copyOfRange(secondHeader, 5, 9), 0, mem,
@@ -146,7 +146,7 @@ public class Allocator {
 
         return Utils.byteArrToInt(Arrays.copyOfRange(header, 5, 9));
     }
-    
+
     public static int offsetSize(int size) {
         if (size % 4 == 0) {
             return size;
